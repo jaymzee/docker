@@ -13,5 +13,5 @@ $ docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
 
 ## start a new container for Alpine Linux on arm32v7
 ```
-$ docker run -it -v /c/Users/James/source/box/docker/arm:/mnt/code -h arm1 arm32v7/alpine 
+$ docker run -it -v /c/Users/James/source/docker/arm:/mnt/code -h arm1 arm32v7/alpine
 ```
