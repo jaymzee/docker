@@ -1,25 +1,24 @@
 import express from 'express';
 import cors from 'cors';
-import bodyParser from 'body-parser';
 
 const port = 5000;
 const app = express();
 app.use(cors());
-app.use(bodyParser.json());
+app.use(express.json());
 app.set('view engine', 'ejs');
 
 const movieList = [
   {
     id: 1,
     title: 'Terminator',
-    year: 1984
+    year: 1984,
   },
   {
     id: 2,
     title: 'Rocky',
-    year: 1976
-  }
-]
+    year: 1976,
+  },
+];
 
 app.get('/', (req, res) => {
   // res.status(404).send("can't find that");
@@ -44,9 +43,10 @@ app.get('/movies/', (req, res) => {
 app.post('/movies/', (req, res) => {
   const movie = req.body;
   movieList.push(movie);
+  res.send('ok');
 });
 
 app.listen(port, () => {
-  // tslint:disable-next-line:no-console
+  /* eslint-disable-next-line no-console */
   console.log(`Example app listening at http://localhost:${port}`);
 });
