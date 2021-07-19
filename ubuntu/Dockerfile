@@ -1,5 +1,11 @@
 FROM ubuntu:latest
 
-COPY . .
+RUN apt-get -y update
+RUN apt-get install -y openssh-server x11-apps
+RUN apt-get install -y vim
+RUN echo X11UseLocalHost no >> /etc/ssh/sshd_config
+RUN mkdir /var/run/sshd
 
-ENV LANG=C.UTF-8
+EXPOSE 22
+
+CMD ["/usr/sbin/sshd", "-D"]
