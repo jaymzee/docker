@@ -1,0 +1,7 @@
+ru! defaults.vim
+
+set viminfo+=n~/.vim/viminfo
+set expandtab softtabstop=4 shiftwidth=4
+set list listchars=tab:>-,trail:·,extends:»,precedes:«,nbsp:␣
+set hlsearch incsearch
+autocmd FileType scheme setlocal softtabstop=2 shiftwidth=2
