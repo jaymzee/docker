@@ -9,12 +9,12 @@ adds `ssh` and `vim`.
 
 ### Running the image in a new container
 ```
-docker run -it -v /c/Users/James/source/docker/scheme:/mnt/code -h scheme --name scheme -p 2223:22 scheme
+docker run -it -v /c/Users/James/source/docker/scheme/src:/mnt/code -h scheme --name scheme -p PORT:22 IMAGE
 ```
 
 ### X11 forwarding
 Make sure the environment has the variable `DISPLAY=localhost:0.0` set.
 Create a user in the running container using `exec`, then ssh into it with:
 ```
-ssh -Y -p 2223 <machine-ip-address>
+ssh -Y -p PORT MACHINE_IP
 ```
