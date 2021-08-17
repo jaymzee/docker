@@ -7,6 +7,7 @@ _start:
     mov r7, #4
     swi 0
 
+    mov r0, #42
     mov r7, #1
     swi 0
 
